@@ -3,7 +3,8 @@ const { Model, Category, Product, ProductTag } = require('../../models');
 
 // The `/api/categories` endpoint
 
-
+// Request is get for the Category table.
+// Return all data in Category table including associated Product table 
 router.get('/', async (req, res) => {
   try {
   // find all categories
@@ -27,7 +28,7 @@ router.get('/:id', async (req, res) => {
     });
 
     if (!categoryData) {
-      res.status(404).json({ message: 'No category found with that id!' });
+      res.status(404).json({ message: 'No category found with that id.' });
       return;
     }
 
@@ -66,7 +67,7 @@ router.put('/:id', async (req, res) => {
     res.status(500).json(err);
   }
 
-})
+});
 
 router.delete('/:id', async (req, res) => {
   // delete a category by its `id` value
