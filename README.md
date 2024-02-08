@@ -34,44 +34,64 @@ WHEN I test API POST, PUT, and DELETE routes in Insomnia Core
 THEN I am able to successfully create, update, and delete data in my database
 
 ### Mock-Up
+N/A
 
 ## Installation-Execution
-Walkthrough video:
-<video width='320' height='240' controls>
-<source src="./Assets/challenge12.mp4" type='video/mp4'>
-</video>
+Walkthrough video (note, this walkthrough was done using Thunder Client as the API client extension):
 
-Open a command terminal, go to the employee-tracker folder.
 
-Open mysql and create the database and seed it:
+To run the ecommerce_backend app, do the following:
 
-1. mysql -uroot -p
+1. Open a command terminal, go to the ecommerce backend folder.
 
-2. source db/schema.sql
+2. Open mysql and create the database:
 
-3. source db/seeds.sql
+mysql -uroot -p
 
-Quit mysql and start the employee-tracker:
+source db/schema.sql
 
-node server.js
+3. In the command terminal, seed the database:
 
-Once you are in the Employee Tracker cli interface, you can do the following:
+npm run seed
 
-1. View All Employees will display a table showing the employee's id, first and last name, role (job title), salary, department and manager's first and last name.
+4. Start the ecommerce backend:
 
-2. View All Departments will display a table showing department ids and names.
+npm run start
 
-3. View All Roles will display a table showing role ids, names (titles) and the department that the role belongs too, along with the salary.
+1. Once the connection is made, you can use your favorite web API testing app to test the following:
 
-4. Add An Employee will prompt for the new employee's first and last name, role, and manager name. This information will be stored in the database under the new employee.
+Category endpoint = http://localhost:3001/api/categories
 
-5. Add a Role will prompt for the new role's name (title) and the salary and title that go with that role. This information will be stored in the database under the new role.
+Product endpoint = http://localhost:3001/api/products
 
-6. Add a Department will prompt for the new department's name. This information will be stored in the database under the new department.
+Tag endpoint = http://localhost:3001/api/tags
 
-7. Update Employee's role will prompt for the employee to update and the role to update the employee to. This information will be updated stored in the database.
+2. Test the GET using the above endpoints
 
-Enter <ctrl>C to quit.
+3. Test the GET and DELETE by appending the id of the record you are accessing:
+
+http://localhost:3001/api/categories/5
+
+http://localhost:3001/api/products/5
+
+http://localhost:3001/api/tags/5
+
+4. Test the POST by adding a body for example for creating a new product:
+
+{
+      "product_name": "Basketball",
+      "price": 200.00,
+      "stock": 3,
+      "tagIds": [1, 2, 3, 4]
+}
+
+5. Test the PUT by adding a body for example for changing a product price:
+
+{ 
+    "price" : 150.00
+}
+
+and appending the product id to the endpoint as shown in #4 above.
 
 ## Usage
 

@@ -18,6 +18,8 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Request is get for the Category table where an id is passed in.
+// Return all data in from the Category table represented by the id passed in, including associated Product table 
 router.get('/:id', async (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
@@ -39,6 +41,7 @@ router.get('/:id', async (req, res) => {
  
 });
 
+// Request is post to create another category in the Category table.
 router.post('/', async (req, res) => {
   // create a new category
   try {
@@ -50,6 +53,7 @@ router.post('/', async (req, res) => {
   
 });
 
+// Request is put to update a category represented by the id being passed in, in the Category table.
 router.put('/:id', async (req, res) => {
   // update a category by its `id` value
   try {
@@ -69,6 +73,7 @@ router.put('/:id', async (req, res) => {
 
 });
 
+// Request is delete to delete a category represented by the id being passed in, in the Category table.
 router.delete('/:id', async (req, res) => {
   // delete a category by its `id` value
   try {
