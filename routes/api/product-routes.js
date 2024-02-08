@@ -26,7 +26,7 @@ router.get("/:id", async (req, res) => {
   try {
     const productData = await Product.findByPk(req.params.id, {
       // Add Product as a second model to JOIN with to get product information
-      include: [{ model: Product, model: Tag }],
+      include: [{ model: Category, model: Tag }],
     });
 
     if (!productData) {
@@ -87,13 +87,10 @@ router.put("/:id", (req, res) => {
           where: { product_id: req.params.id },
         }).then((productTags) => {
           // create filtered list of new tag_ids
-          console.log(productTags);
           const productTagIds = productTags.map(({ tag_id }) => tag_id);
-          console.log(productTagIds);
           const newProductTags = req.body.tagIds
             .filter((tag_id) => !productTagIds.includes(tag_id))
             .map((tag_id) => {
-              console.log(newProductTags);
               return {
                 product_id: req.params.id,
                 tag_id,
@@ -104,7 +101,6 @@ router.put("/:id", (req, res) => {
           const productTagsToRemove = productTags
             .filter(({ tag_id }) => !req.body.tagIds.includes(tag_id))
             .map(({ id }) => id);
-            console.log(productTagsToRemove);
           // run both actions
           return Promise.all([
             ProductTag.destroy({ where: { id: productTagsToRemove } }),
