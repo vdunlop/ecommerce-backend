@@ -39,6 +39,13 @@ N/A
 ## Installation-Execution
 Walkthrough video (note, this walkthrough was done using Thunder Client as the API client extension):
 
+GETS
+
+<video controls src="gets.mp4" title="GETS"></video>
+
+PUT/POST/DELETE
+
+<video controls src="putpostdelete-1.mp4" title="PUTPOSTDELETE"></video></video>
 
 To run the ecommerce_backend app, do the following:
 
