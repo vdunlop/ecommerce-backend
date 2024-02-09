@@ -40,15 +40,16 @@ N/A
 Walkthrough video (note, this walkthrough was done using Thunder Client as the API client extension):
 
 Seed and Start
-<video controls src="seedandstart.mp4" title="Seed and Start"></video>
+
+<video controls src="./Assets/seedandstart.mp4" title="Seed and Start"></video>
 
 GETS
 
-<video controls src="gets.mp4" title="GETS"></video>
+<video controls src="./Assets/gets.mp4" title="GETS"></video>
 
 PUT/POST/DELETE
 
-<video controls src="putpostdelete-1.mp4" title="PUTPOSTDELETE"></video></video>
+<video controls src="./Assets/putpostdelete.mp4" title="PUTPOSTDELETE"></video></video>
 
 To run the ecommerce_backend app, do the following:
 
