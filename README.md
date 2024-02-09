@@ -39,6 +39,9 @@ N/A
 ## Installation-Execution
 Walkthrough video (note, this walkthrough was done using Thunder Client as the API client extension):
 
+Seed and Start
+<video controls src="seedandstart.mp4" title="Seed and Start"></video>
+
 GETS
 
 <video controls src="gets.mp4" title="GETS"></video>
